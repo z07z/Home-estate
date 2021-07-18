@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "developments",
+  "info": {
+    "name": "development",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "startingprice": {
+      "type": "decimal",
+      "required": true
+    },
+    "pricePersquar": {
+      "type": "decimal",
+      "required": true
+    },
+    "areastartsfrom": {
+      "type": "decimal",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Compound",
+        "Building",
+        "BeachHouse"
+      ],
+      "required": true
+    },
+    "FinishingDate": {
+      "type": "date",
+      "required": true
+    },
+    "location": {
+      "type": "json",
+      "required": true
+    },
+    "viewinghoures": {
+      "type": "time"
+    },
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    }
+  }
+}

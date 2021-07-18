@@ -1,0 +1,183 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "name": "property",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 250
+    },
+    "price": {
+      "required": true,
+      "type": "decimal"
+    },
+    "area": {
+      "type": "integer",
+      "required": true
+    },
+    "age": {
+      "type": "integer",
+      "required": false
+    },
+    "purpose": {
+      "type": "enumeration",
+      "enum": [
+        "Sell",
+        "Rent",
+        "Develop"
+      ],
+      "required": true
+    },
+    "rooms": {
+      "type": "integer",
+      "required": true
+    },
+    "baths": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "House",
+        "Apartment",
+        "Land",
+        "Store"
+      ],
+      "required": true
+    },
+    "Photos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "location": {
+      "type": "json"
+    },
+    "parking": {
+      "type": "boolean",
+      "default": false
+    },
+    "swimmingpool": {
+      "type": "boolean",
+      "default": false
+    },
+    "Favorite": {
+      "type": "boolean",
+      "default": false
+    },
+    "CentralAir": {
+      "type": "boolean",
+      "default": false
+    },
+    "Balcony": {
+      "type": "boolean",
+      "default": false
+    },
+    "Gym": {
+      "type": "boolean",
+      "default": false
+    },
+    "WasteDisposal": {
+      "type": "boolean",
+      "default": false
+    },
+    "Maintenance": {
+      "type": "boolean",
+      "default": false
+    },
+    "Security": {
+      "type": "boolean",
+      "default": false
+    },
+    "elevator": {
+      "type": "boolean",
+      "default": false
+    },
+    "cctv": {
+      "type": "boolean",
+      "default": false
+    },
+    "garden": {
+      "type": "boolean",
+      "default": false
+    },
+    "maidsroom": {
+      "type": "boolean",
+      "default": false
+    },
+    "storage": {
+      "type": "boolean",
+      "default": false
+    },
+    "laundryroom": {
+      "type": "boolean",
+      "default": false
+    },
+    "pets": {
+      "type": "boolean"
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "AED",
+        "SAR",
+        "QAR",
+        "Dollar"
+      ],
+      "default": "AED",
+      "required": true
+    },
+    "Basement": {
+      "type": "boolean",
+      "default": false
+    },
+    "fireplace": {
+      "type": "boolean",
+      "default": false
+    },
+    "CentralHeating": {
+      "type": "boolean",
+      "default": false
+    },
+    "views": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "Classification": {
+      "type": "enumeration",
+      "enum": [
+        "Residential",
+        "Commercial"
+      ],
+      "required": true
+    },
+    "rentFrequency": {
+      "type": "enumeration",
+      "enum": [
+        "Yearly",
+        "Monthly",
+        "Weekly",
+        "Daily"
+      ]
+    }
+  }
+}
